@@ -1,0 +1,174 @@
+$negro: #111111;
+$blanco:#fefefe;
+$grisOscuro:#222222;
+$grisClaro:#c8c8c8;
+$naranja:#ffb84d;
+$azul:#1132c5;
+
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+body{
+    background-color: $blanco;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: .3s ease all;
+
+
+    &.dark{
+        background: $negro;
+    }
+}
+
+.title{
+    color: $azul;
+    font-size: 100px;
+    
+    body.dark & {
+        color:$blanco;
+    }
+}
+.subTitle{
+    font-size: 25px;
+    body.dark & {
+        color:$naranja;
+    }
+}
+
+
+p {
+    text-align: center;
+}
+
+img{
+    max-width: 30px;
+}
+
+input{
+    background-color: #f1f1f1;
+}
+.btn{
+    color: white;
+    cursor: pointer;
+    padding: 2px 12px;
+    border:none;
+    border-radius: 50px;
+    position: static;
+}
+
+.moneda{
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.moneda select{
+    padding: 10px 20px 10px 10px;
+    border: 1px solid #dedede;
+    font-size: 16px;
+    appearance: none;
+}
+
+.moneda input {
+    border: 0;
+    font-size: 30px;
+    text-align: right;
+}
+
+.taza-cambio-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cambio{
+    display: block;
+    font-size: 14px;
+    padding: 0 10px;
+    font-weight: 600px;
+    body.dark & {
+        color:$blanco;
+    }
+}
+
+.footer{
+padding-top: 80px;
+}
+
+.footerText{ 
+    body.dark & {
+    color:$blanco;
+}}
+
+a:link{
+    color: $grisOscuro;
+    body.dark & {
+        color:$grisClaro;
+    }
+}
+
+a:visited{
+    color:$azul;
+    body.dark & {
+        color:$naranja;
+    }
+}
+
+select:focus, input:focus, button:focus{
+    outline: 0;
+}
+
+@media (max-width:600px) {
+    .moneda input{
+        width: 200px;
+    }
+    
+}
+
+.switch{
+    background: #343d5b;
+    border-radius: 1000px;
+    border:none;
+    position: relative;
+    cursor:pointer;
+    display: flex;
+    outline: none;
+    &::after {
+        content: "";
+        display: block;
+        width: 33px;
+        height: 32px;
+        position: absolute;
+        background: #f1f1f1;
+        top: 0;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+    }
+&.active {
+    background:#ffb84d;
+    color: #000;
+    &::after{
+        right: 0;
+        left:unset;
+    }
+}
+span{
+    width: 30px;
+    height:30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color:$blanco;
+}
+}
